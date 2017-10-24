@@ -7,23 +7,24 @@ jobs:
     steps:
       - checkout
       - run: echo BUILD
-  deploy:
-    docker:
-      - image: circleci/golang:1.9
-    steps:
-      - checkout
-      - run: echo DEPLOY
 
-workflows:
-  version: 2
-  jobs:
-    - build:
-        filters:
-          branches:
-            only: /.*/
-    - deploy:
-        requires:
-          - build
-        filters:
-          tags:
-            only: /[0-9]+/
+#  deploy:
+#    docker:
+#      - image: circleci/golang:1.9
+#    steps:
+#      - checkout
+#      - run: echo DEPLOY
+
+#workflows:
+#  version: 2
+#  jobs:
+#    - build:
+#        filters:
+#          branches:
+#            only: /.*/
+#    - deploy:
+#        requires:
+#          - build
+#        filters:
+#          tags:
+#            only: /[0-9]+/
