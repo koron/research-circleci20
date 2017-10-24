@@ -15,13 +15,17 @@ jobs:
 #      - checkout
 #      - run: echo DEPLOY
 
-#workflows:
-#  version: 2
-#  jobs:
-#    - build:
-#        filters:
-#          branches:
-#            only: /.*/
+workflows:
+  version: 2
+  build-and-deploy:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only: /.*/
+            tags:
+              only: /[0-9]+(\.[0-9+])*/
+
 #    - deploy:
 #        requires:
 #          - build
