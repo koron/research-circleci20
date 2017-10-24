@@ -7,6 +7,7 @@ jobs:
     steps:
       - checkout
       - run: echo BUILD
+      - run: echo x${CIRCLE_TAG}x
 
 #  deploy:
 #    docker:
