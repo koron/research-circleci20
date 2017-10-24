@@ -8,6 +8,8 @@ jobs:
       - checkout
       - run: echo BUILD
   deploy:
+    docker:
+      - image: circleci/golang:1.9
     steps:
       - checkout
       - run: echo DEPLOY
